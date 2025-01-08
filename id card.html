@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ID CARD</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/vue@3"></script>
+    </head>
+    <body>
+     <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">coffee</h2>
+            </a>
+            <ul class="nav-menu" >
+                <li class="nav-item"  v-for="(x,y) in x" :key="y" >
+                    <a :href="x.url" :title='`this is link goes to ${x.text} page`' class="nav-link">{{ x.text}}</a>
+                </li>
+            </ul>
+        </nav>
+     </header>
+     <section class="hero-section">
+        <div class="section-content">
+            <div class="hero-details">
+                <h2 class="title">best coffee</h2>
+                <h3 class="subtitle">make your day great with our spectial coffee</h3>
+                <p class="description">Welcome to our coffee paradise , where every bean tells a story and every cup sparks joy. </p>
+                <div class="buttons">
+                    <a href="#" class="button order-now">order now</a>
+                    <a href="#" class="button contact-us">contact us</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="coffee-nonback.png" alt="coffee" class="hero-image">
+            </div>
+        </div>
+     </section>
+     <div class="vue">
+       <h2>{{ name }} <h2>
+     </div>
+     <script>
+        Vue.createApp({
+            data() {
+                return{
+                    name:"mustafa"
+                }
+            }
+        }).mount(".vue");
+        Vue.createApp({
+            data() {
+                return{
+                    name: "mustafa",
+                     x : [
+                    {text: "home" ,url: "home.html"},
+                    {text: "about" ,url: "about.html"},
+                    {text: "menu" ,url: "menu.html"},
+                    {text: "testemonia" ,url: "testemonia.html"},
+                    {text: "gallary" ,url: "gallary.html"},
+                    {text: "contact" ,url: "contact.html"}],
+
+                }
+            }
+        }).mount(".nav-menu");
+     </script>
+    </body>
+</html>   
