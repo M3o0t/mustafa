@@ -12,9 +12,11 @@
                 <h2 class="logo-text">coffee</h2>
             </a>
             <ul class="nav-menu" >
-                <li class="nav-item"  v-for="(x,y) in x" :key="y" >
-                    <a :href="x.url" :title='`this is link goes to ${x.text} page`' class="nav-link">{{ x.text}}</a>
-                </li>
+              <li class="nav-item" v-for="(link, i) in links" :key="i">
+                 <a :href="link.url" :title="`This is link goes to ${link.text} page`" class="nav-link">
+                  {{ link.text }}
+                 </a>
+              </li>  
             </ul>
         </nav>
      </header>
@@ -35,7 +37,7 @@
         </div>
      </section>
      <div class="vue">
-       <h2>{{ name }} <h2>
+       <h2>{{ name }} </h2>
      </div>
      <script>
         Vue.createApp({
