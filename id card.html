@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ID CARD</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://unpkg.com/vue@3"></script>
-    </head>
-    <body>
-     <header>
+  <head>
+    <title>ID CARD</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
         <nav class="navbar section-content">
-            <a href="#" class="nav-logo">
-                <h2 class="logo-text">coffee</h2>
-            </a>
-            <ul class="nav-menu" >
-              <li class="nav-item" v-for="(link, i) in links" :key="i">
-                 <a :href="link.url" :title="`This is link goes to ${link.text} page`" class="nav-link">
-                  {{ link.text }}
-                 </a>
-              </li>  
-            </ul>
+          <a href="#" class="nav-logo">
+            <h2 class="logo-text">coffee</h2>
+          </a>
+          <ul class="nav-menu">
+            <li class="nav-item" v-for="(link, i) in links" :key="i">
+              <a
+                :href="link.url"
+                :title="`This is link goes to ${link.text} page`"
+                class="nav-link"
+              >
+                {{ link.text }}
+              </a>
+            </li>
+          </ul>
         </nav>
-     </header>
-     <section class="hero-section">
+      </header>
+
+      <section class="hero-section">
         <div class="section-content">
-            <div class="hero-details">
-                <h2 class="title">best coffee</h2>
-                <h3 class="subtitle">make your day great with our spectial coffee</h3>
-                <p class="description">Welcome to our coffee paradise , where every bean tells a story and every cup sparks joy. </p>
-                <div class="buttons">
-                    <a href="#" class="button order-now">order now</a>
-                    <a href="#" class="button contact-us">contact us</a>
-                </div>
+          <div class="hero-details">
+            <h2 class="title">best coffee</h2>
+            <h3 class="subtitle">
+              make your day great with our spectial coffee
+            </h3>
+            <p class="description">
+              Welcome to our coffee paradise, where every bean tells a story
+              and every cup sparks joy.
+            </p>
+            <div class="buttons">
+              <a href="#" class="button order-now">order now</a>
+              <a href="#" class="button contact-us">contact us</a>
             </div>
-            <div class="hero-image-wrapper">
-                <img src="coffee-nonback.png" alt="coffee" class="hero-image">
-            </div>
+          </div>
+          <div class="hero-image-wrapper">
+            <img
+              src="coffee-nonback.png"
+              alt="coffee"
+              class="hero-image"
+            />
+          </div>
         </div>
-     </section>
-     <div class="vue">
-       <h2>{{ name }} </h2>
-     </div>
-     <script>
-    Vue.createApp({
+      </section>
+
+      <div class="vue">
+        <h2>{{ name }}</h2>
+      </div>
+    </div>
+
+    <script>
+      Vue.createApp({
         data() {
-            return {
-                name: "Mustafa",
-                links: [
-                    { text: "Home", url: "home.html" },
-                    { text: "About", url: "about.html" },
-                    { text: "Menu", url: "menu.html" },
-                    { text: "Testimonial", url: "testimonial.html" },
-                    { text: "Gallery", url: "gallery.html" },
-                    { text: "Contact", url: "contact.html" }
-                ]
-            };
-        }
-    }).mount("body");
-</script>
-    </body>
-</html>   
+          return {
+            name: "Mustafa",
+            links: [
+              { text: "Home", url: "home.html" },
+              { text: "About", url: "about.html" },
+              { text: "Menu", url: "menu.html" },
+              { text: "Testimonial", url: "testimonial.html" },
+              { text: "Gallery", url: "gallery.html" },
+              { text: "Contact", url: "contact.html" },
+            ],
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
